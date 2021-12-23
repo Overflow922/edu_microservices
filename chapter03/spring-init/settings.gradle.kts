@@ -6,6 +6,7 @@ pluginManagement {
     }
 }
 rootProject.name = "spring-init"
+include(":api")
 include(":microservices:product-service")
 include(":microservices:review-service")
 include(":microservices:recommendation-service")
