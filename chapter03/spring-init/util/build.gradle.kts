@@ -1,5 +1,5 @@
 plugins {
-    id("io.spring.dependency-management") version "1.0.11.RELEASE"
+    id("io.spring.dependency-management")
     java
 }
 
@@ -13,12 +13,12 @@ repositories {
     maven { url = uri("https://repo.spring.io/snapshot") }
 }
 
-
 val springBootVersion = "2.7.0-SNAPSHOT"
 
 dependencies {
     implementation(platform("org.springframework.boot:spring-boot-dependencies:${springBootVersion}"))
 
+    implementation(project(":api"))
     implementation("org.springframework.boot:spring-boot-starter-webflux:${springBootVersion}")
     testImplementation("org.springframework.boot:spring-boot-starter-test:${springBootVersion}")
 }

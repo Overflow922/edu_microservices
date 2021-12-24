@@ -1,9 +1,9 @@
 plugins {
-    id("io.spring.dependency-management") version "1.0.11.RELEASE"
+    id("io.spring.dependency-management")
     java
 }
 
-group = "com.iyuriy.microservices.core"
+group = "com.iyuriy.microservices"
 version = "1.0.0-SNAPSHOT"
 java.sourceCompatibility = JavaVersion.VERSION_17
 
@@ -13,14 +13,13 @@ repositories {
     maven { url = uri("https://repo.spring.io/snapshot") }
 }
 
-
 val springBootVersion = "2.7.0-SNAPSHOT"
 
 dependencies {
     implementation(platform("org.springframework.boot:spring-boot-dependencies:${springBootVersion}"))
 
-    implementation("org.springframework.boot:spring-boot-starter-webflux")
-    testImplementation("org.springframework.boot:spring-boot-starter-test")
+    implementation("org.springframework.boot:spring-boot-starter-webflux:${springBootVersion}")
+    testImplementation("org.springframework.boot:spring-boot-starter-test:${springBootVersion}")
 }
 
 tasks.withType<Test> {
