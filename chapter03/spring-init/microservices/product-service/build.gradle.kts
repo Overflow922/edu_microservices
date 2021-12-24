@@ -14,7 +14,10 @@ repositories {
     maven { url = uri("https://repo.spring.io/snapshot") }
 }
 
+
 dependencies {
+    implementation(project(":api"))
+    implementation(project(":util"))
     implementation("org.springframework.boot:spring-boot-starter-actuator")
     implementation("org.springframework.boot:spring-boot-starter-webflux")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
@@ -23,4 +26,8 @@ dependencies {
 
 tasks.withType<Test> {
     useJUnitPlatform()
+}
+
+tasks.getByName<Jar>("jar") {
+    enabled = false
 }
